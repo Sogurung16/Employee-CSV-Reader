@@ -1,1 +1,79 @@
 17-08-2021 17:02:34 INFO [main] CSVFileReader - EmployeeID: 198429
+18-08-2021 15:36:42 INFO [main] CSVFileReader - EmployeeID: 198429
+18-08-2021 15:44:11 INFO [main] CSVFileReader - Number of records in Database: 10000
+18-08-2021 15:44:11 INFO [main] CSVFileReader - EmployeeID: 198429
+18-08-2021 16:15:02 INFO [main] CSVFileReader - Number of records in Database: 10000
+18-08-2021 16:15:02 INFO [main] CSVFileReader - First record in Database: com.sparta.sonam.csvproject.dto.EmployeeDTO@2db7a79b
+18-08-2021 16:41:59 INFO [main] CSVFileReader - Number of records in Database: 10000
+18-08-2021 16:41:59 INFO [main] CSVFileReader - First record in Database: Employee ID: EmployeeDTO198429
+Name Prefix: EmployeeDTOMrs.
+First Name: EmployeeDTOSerafina
+Middle Initial: EmployeeDTOI
+Last Name: EmployeeDTOBumgarner
+Gender: EmployeeDTOF
+Email: EmployeeDTOserafina.bumgarner@exxonmobil.com
+Date of Birth: EmployeeDTOnull
+Date of Joining: EmployeeDTOnull
+Salary: EmployeeDTO69294.0
+18-08-2021 16:42:30 INFO [main] CSVFileReader - Number of records in Database: 10000
+18-08-2021 16:42:30 INFO [main] CSVFileReader - First record in Database: 
+Employee ID: EmployeeDTO198429
+Name Prefix: EmployeeDTOMrs.
+First Name: EmployeeDTOSerafina
+Middle Initial: EmployeeDTOI
+Last Name: EmployeeDTOBumgarner
+Gender: EmployeeDTOF
+Email: EmployeeDTOserafina.bumgarner@exxonmobil.com
+Date of Birth: EmployeeDTOnull
+Date of Joining: EmployeeDTOnull
+Salary: EmployeeDTO69294.0
+18-08-2021 16:43:39 INFO [main] CSVFileReader - Number of records in Database: 10000
+18-08-2021 16:43:39 INFO [main] CSVFileReader - First record in Database: 
+Employee ID: 198429
+Name Prefix: EmployeeDTOMrs.
+First Name: EmployeeDTOSerafina
+Middle Initial: EmployeeDTOI
+Last Name: EmployeeDTOBumgarner
+Gender: EmployeeDTOF
+Email: EmployeeDTOserafina.bumgarner@exxonmobil.com
+Date of Birth: EmployeeDTOnull
+Date of Joining: EmployeeDTOnull
+Salary: EmployeeDTO69294.0
+18-08-2021 16:44:14 INFO [main] CSVFileReader - Number of records in Database: 10000
+18-08-2021 16:44:15 INFO [main] CSVFileReader - First record in Database: 
+Employee ID: 198429
+Name Prefix: Mrs.
+First Name: Serafina
+Middle Initial: I
+Last Name: Bumgarner
+Gender: F
+Email: serafina.bumgarner@exxonmobil.com
+Date of Birth: null
+Date of Joining: null
+Salary: 69294.0
+18-08-2021 17:09:11 INFO [main] CSVFileReader - Number of records in Database: 10000
+18-08-2021 17:09:11 INFO [main] CSVFileReader - First record in Database: 
+Employee ID: 198429
+Name Prefix: Mrs.
+First Name: Serafina
+Middle Initial: I
+Last Name: Bumgarner
+Gender: F
+Email: serafina.bumgarner@exxonmobil.com
+Date of Birth: null
+Date of Joining: null
+Salary: 69294.0
+18-08-2021 17:09:11 INFO [main] CSVFileReader - Number of records in Database: 10000
+18-08-2021 17:24:13 INFO [main] CSVFileReader - Number of records in Database: 10000
+18-08-2021 17:24:14 INFO [main] CSVFileReader - First record in Database: 
+Employee ID: 198429
+Name Prefix: Mrs.
+First Name: Serafina
+Middle Initial: I
+Last Name: Bumgarner
+Gender: F
+Email: serafina.bumgarner@exxonmobil.com
+Date of Birth: null
+Date of Joining: null
+Salary: 69294.0
+18-08-2021 17:24:14 INFO [main] CSVFileReader - Number of records in Database: 10000

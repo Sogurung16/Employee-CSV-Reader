@@ -14,3 +14,4 @@ public class DataProcessor {
         return arrayList;
     }
 }
+//TODO: Only take id and remove duplicate id then add remaining ids back to arraylist
