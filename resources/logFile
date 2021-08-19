@@ -270,3 +270,21 @@ Salary: 69294.0
 19-08-2021 15:17:07 INFO [main] App - Time taken to run programme: 146335300
 19-08-2021 15:18:00 INFO [main] CSVFileReader - Number of records in Database: 9943
 19-08-2021 15:18:00 INFO [main] App - Time taken to run programme: 0seconds
+19-08-2021 15:23:19 INFO [main] CSVFileReader - Number of clean records in Database: 9943
+19-08-2021 15:23:19 INFO [main] CSVFileReader - Number of duplicate records in Database: 57
+19-08-2021 15:23:19 INFO [main] App - Time taken to run programme: 0seconds
+19-08-2021 15:29:59 INFO [main] CSVFileReader - Number of clean records in Database: 9943
+19-08-2021 15:29:59 INFO [main] CSVFileReader - Number of duplicate records in Database: 57
+19-08-2021 15:29:59 INFO [main] App - Time taken to run programme: 0seconds
+19-08-2021 15:57:18 INFO [main] CSVFileReader - Number of clean records in Database: 10000
+19-08-2021 15:57:18 INFO [main] CSVFileReader - Number of duplicate records in Database: 0
+19-08-2021 15:57:18 INFO [main] App - Time taken to run programme: 0seconds
+19-08-2021 15:58:30 INFO [main] CSVFileReader - Number of clean records in Database: 9943
+19-08-2021 15:58:30 INFO [main] CSVFileReader - Number of duplicate records in Database: 57
+19-08-2021 15:58:30 INFO [main] App - Time taken to run programme: 0seconds
+19-08-2021 16:00:11 INFO [main] CSVFileReader - Number of clean records in Database: 9943
+19-08-2021 16:00:11 INFO [main] CSVFileReader - Number of duplicate records in Database: 57
+19-08-2021 16:00:11 INFO [main] App - Time taken to run programme: 0seconds
+19-08-2021 16:08:38 INFO [main] CSVFileReader - Number of clean records in Database: 9943
+19-08-2021 16:08:38 INFO [main] CSVFileReader - Number of duplicate records in Database: 57
+19-08-2021 16:08:38 INFO [main] App - Time taken to run programme: 0seconds

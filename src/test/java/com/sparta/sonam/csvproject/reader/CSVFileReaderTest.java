@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 class CSVFileReaderTest {
     @Test
@@ -25,19 +26,72 @@ class CSVFileReaderTest {
             var fileReader = new FileReader("src/main/resources/EmployeeRecords.csv");
             var bufferedReader = new BufferedReader(fileReader);
 
-            ArrayList<EmployeeDTO> employees = new ArrayList<>();
+            ArrayList<EmployeeDTO> employeeDTOArrayList = new ArrayList<>();
             String line;
 
             bufferedReader.readLine();
 
             while((line = bufferedReader.readLine())!=null){
                 EmployeeDTO employee = new EmployeeDTO(line.split(","));
-                employees.add(employee);
+                employeeDTOArrayList.add(employee);
             }
 
-            Assertions.assertEquals(10000, employees.size());
+            Assertions.assertEquals(10000, employeeDTOArrayList.size());
 
             fileReader.close();
+        } catch (IOException e){
+            System.err.println(e.getMessage());
+        }
+    }
+
+    @Test
+    @DisplayName("Number of clean records in Database should be 9943")
+    void numberOfCleanRecordsInDatabase(){
+        try {
+            var fileReader = new FileReader("src/main/resources/EmployeeRecords.csv");
+            var bufferedReader = new BufferedReader(fileReader);
+
+            HashMap<Integer, EmployeeDTO> employeeDTOHashMap = new HashMap<>();
+            ArrayList<EmployeeDTO> employeeDTOArrayList = new ArrayList<>();
+            String line;
+
+            bufferedReader.readLine();
+
+            while((line = bufferedReader.readLine())!=null){
+                EmployeeDTO employee = new EmployeeDTO(line.split(","));
+                employeeDTOHashMap.put(employee.getEmployeeID(), employee);
+                employeeDTOArrayList.add(employee);
+            }
+            fileReader.close();
+
+            Assertions.assertEquals(9943, employeeDTOHashMap.size());
+        } catch (IOException e){
+            System.err.println(e.getMessage());
+        }
+    }
+
+    @Test
+    @DisplayName("Number of duplicate records in Database should be 57")
+    void numberOfDuplicateRecordsInDatabase(){
+        try {
+            var fileReader = new FileReader("src/main/resources/EmployeeRecords.csv");
+            var bufferedReader = new BufferedReader(fileReader);
+
+            HashMap<Integer, EmployeeDTO> employeeDTOHashMap = new HashMap<>();
+            ArrayList<EmployeeDTO> employeeDTOArrayList = new ArrayList<>();
+            String line;
+
+            bufferedReader.readLine();
+
+            while((line = bufferedReader.readLine())!=null){
+                EmployeeDTO employee = new EmployeeDTO(line.split(","));
+                employeeDTOHashMap.put(employee.getEmployeeID(), employee);
+                employeeDTOArrayList.add(employee);
+            }
+            fileReader.close();
+
+            Assertions.assertEquals(57,
+                    (employeeDTOArrayList.size() - employeeDTOHashMap.size()));
         } catch (IOException e){
             System.err.println(e.getMessage());
         }

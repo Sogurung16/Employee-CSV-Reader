@@ -5,6 +5,7 @@ import org.apache.log4j.Logger;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class CSVFileReader{
@@ -16,6 +17,7 @@ public class CSVFileReader{
             var bufferedReader = new BufferedReader(fileReader);
 
             HashMap<Integer, EmployeeDTO> employeeDTOHashMap = new HashMap<>();
+            ArrayList<EmployeeDTO> employeeDTOArrayList = new ArrayList<>();
             String line;
 
             bufferedReader.readLine();
@@ -23,10 +25,13 @@ public class CSVFileReader{
             while((line = bufferedReader.readLine())!=null){
                 EmployeeDTO employee = new EmployeeDTO(line.split(","));
                 employeeDTOHashMap.put(employee.getEmployeeID(), employee);
+                employeeDTOArrayList.add(employee);
             }
             fileReader.close();
 
-            logger.info("Number of records in Database: " + employeeDTOHashMap.size());
+            logger.info("Number of clean records in Database: " + employeeDTOHashMap.size());
+            logger.info("Number of duplicate records in Database: " +
+                    (employeeDTOArrayList.size() - employeeDTOHashMap.size()));
         } catch (IOException e){
             System.err.println(e.getMessage());
         }
