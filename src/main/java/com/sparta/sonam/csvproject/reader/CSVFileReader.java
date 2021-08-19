@@ -1,49 +1,35 @@
 package com.sparta.sonam.csvproject.reader;
 
-import com.sparta.sonam.csvproject.dataprocessor.DataProcessor;
 import com.sparta.sonam.csvproject.dto.EmployeeDTO;
 import org.apache.log4j.Logger;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.HashMap;
 
-public class CSVFileReader implements Runnable{
-    private static Logger logger = Logger.getLogger("FileIO");
+public class CSVFileReader{
+    private static Logger logger = Logger.getLogger("CSVFileReader");
 
     public static void readFromFile(String fileName) {
         try {
             var fileReader = new FileReader(fileName);
             var bufferedReader = new BufferedReader(fileReader);
 
-            ArrayList<EmployeeDTO> employees = new ArrayList<>();
-            ArrayList<Integer> employeesID = new ArrayList<>();
+            HashMap<Integer, EmployeeDTO> employeeDTOHashMap = new HashMap<>();
             String line;
 
             bufferedReader.readLine();
 
             while((line = bufferedReader.readLine())!=null){
                 EmployeeDTO employee = new EmployeeDTO(line.split(","));
-                employees.add(employee);
-                employeesID.add(employee.getEmployeeID());
+                employeeDTOHashMap.put(employee.getEmployeeID(), employee);
             }
-
-            logger.info("Number of records in Database: " + employees.size());
-            logger.info("First record in Database: " + employees.get(0).toString());
-
-            DataProcessor.removeDuplicates(employeesID);
-
-            logger.info("Number of records in Database: " + employeesID.size());
-
             fileReader.close();
+
+            logger.info("Number of records in Database: " + employeeDTOHashMap.size());
         } catch (IOException e){
             System.err.println(e.getMessage());
         }
-    }
-
-    @Override
-    public void run() {
-
     }
 }
 
