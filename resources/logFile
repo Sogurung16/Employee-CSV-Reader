@@ -77,3 +77,133 @@ Date of Birth: null
 Date of Joining: null
 Salary: 69294.0
 18-08-2021 17:24:14 INFO [main] CSVFileReader - Number of records in Database: 10000
+19-08-2021 13:53:17 INFO [main] CSVFileReader - Number of records in Database: 10000
+19-08-2021 13:53:17 INFO [main] CSVFileReader - First record in Database: 
+Employee ID: 198429
+Name Prefix: Mrs.
+First Name: Serafina
+Middle Initial: I
+Last Name: Bumgarner
+Gender: F
+Email: serafina.bumgarner@exxonmobil.com
+Date of Birth: null
+Date of Joining: null
+Salary: 69294.0
+19-08-2021 13:53:17 INFO [main] CSVFileReader - Number of records in Database: 10000
+19-08-2021 14:11:34 INFO [main] CSVFileReader - Number of records in Database: 10000
+19-08-2021 14:11:34 INFO [main] CSVFileReader - First record in Database: 
+Employee ID: 198429
+Name Prefix: Mrs.
+First Name: Serafina
+Middle Initial: I
+Last Name: Bumgarner
+Gender: F
+Email: serafina.bumgarner@exxonmobil.com
+Date of Birth: null
+Date of Joining: null
+Salary: 69294.0
+19-08-2021 14:11:34 INFO [main] CSVFileReader - Number of records in Database: 10000
+19-08-2021 14:13:52 INFO [main] CSVFileReader - Number of records in Database: 10000
+19-08-2021 14:13:52 INFO [main] CSVFileReader - First record in Database: 
+Employee ID: 198429
+Name Prefix: Mrs.
+First Name: Serafina
+Middle Initial: I
+Last Name: Bumgarner
+Gender: F
+Email: serafina.bumgarner@exxonmobil.com
+Date of Birth: null
+Date of Joining: null
+Salary: 69294.0
+19-08-2021 14:13:52 INFO [main] CSVFileReader - Number of records in Database: 10000
+19-08-2021 14:16:49 INFO [main] CSVFileReader - Number of records in Database: 10000
+19-08-2021 14:16:49 INFO [main] CSVFileReader - First record in Database: 
+Employee ID: 198429
+Name Prefix: Mrs.
+First Name: Serafina
+Middle Initial: I
+Last Name: Bumgarner
+Gender: F
+Email: serafina.bumgarner@exxonmobil.com
+Date of Birth: null
+Date of Joining: null
+Salary: 69294.0
+19-08-2021 14:16:49 INFO [main] CSVFileReader - Number of records in Database: 10000
+19-08-2021 14:16:59 INFO [main] CSVFileReader - Number of records in Database: 10000
+19-08-2021 14:16:59 INFO [main] CSVFileReader - First record in Database: 
+Employee ID: 198429
+Name Prefix: Mrs.
+First Name: Serafina
+Middle Initial: I
+Last Name: Bumgarner
+Gender: F
+Email: serafina.bumgarner@exxonmobil.com
+Date of Birth: null
+Date of Joining: null
+Salary: 69294.0
+19-08-2021 14:16:59 INFO [main] CSVFileReader - Number of records in Database: 10000
+19-08-2021 14:17:13 INFO [main] CSVFileReader - Number of records in Database: 10000
+19-08-2021 14:17:13 INFO [main] CSVFileReader - First record in Database: 
+Employee ID: 198429
+Name Prefix: Mrs.
+First Name: Serafina
+Middle Initial: I
+Last Name: Bumgarner
+Gender: F
+Email: serafina.bumgarner@exxonmobil.com
+Date of Birth: Sat Jan 09 00:21:00 GMT 1982
+Date of Joining: null
+Salary: 69294.0
+19-08-2021 14:17:13 INFO [main] CSVFileReader - Number of records in Database: 10000
+19-08-2021 14:17:51 INFO [main] CSVFileReader - Number of records in Database: 10000
+19-08-2021 14:17:51 INFO [main] CSVFileReader - First record in Database: 
+Employee ID: 198429
+Name Prefix: Mrs.
+First Name: Serafina
+Middle Initial: I
+Last Name: Bumgarner
+Gender: F
+Email: serafina.bumgarner@exxonmobil.com
+Date of Birth: Thu Jan 21 00:09:00 GMT 1982
+Date of Joining: null
+Salary: 69294.0
+19-08-2021 14:17:51 INFO [main] CSVFileReader - Number of records in Database: 10000
+19-08-2021 14:19:04 INFO [main] CSVFileReader - Number of records in Database: 10000
+19-08-2021 14:19:04 INFO [main] CSVFileReader - First record in Database: 
+Employee ID: 198429
+Name Prefix: Mrs.
+First Name: Serafina
+Middle Initial: I
+Last Name: Bumgarner
+Gender: F
+Email: serafina.bumgarner@exxonmobil.com
+Date of Birth: Thu Jan 21 00:09:00 GMT 1982
+Date of Joining: null
+Salary: 69294.0
+19-08-2021 14:19:04 INFO [main] CSVFileReader - Number of records in Database: 10000
+19-08-2021 14:21:37 INFO [main] CSVFileReader - Number of records in Database: 10000
+19-08-2021 14:21:37 INFO [main] CSVFileReader - First record in Database: 
+Employee ID: 198429
+Name Prefix: Mrs.
+First Name: Serafina
+Middle Initial: I
+Last Name: Bumgarner
+Gender: F
+Email: serafina.bumgarner@exxonmobil.com
+Date of Birth: Tue Sep 21 00:00:00 BST 1982
+Date of Joining: null
+Salary: 69294.0
+19-08-2021 14:21:37 INFO [main] CSVFileReader - Number of records in Database: 10000
+19-08-2021 14:22:22 INFO [main] CSVFileReader - Number of records in Database: 10000
+19-08-2021 14:22:22 INFO [main] CSVFileReader - First record in Database: 
+Employee ID: 198429
+Name Prefix: Mrs.
+First Name: Serafina
+Middle Initial: I
+Last Name: Bumgarner
+Gender: F
+Email: serafina.bumgarner@exxonmobil.com
+Date of Birth: Tue Sep 21 00:00:00 BST 1982
+Date of Joining: Fri Feb 01 00:00:00 GMT 2008
+Salary: 69294.0
+19-08-2021 14:22:22 INFO [main] CSVFileReader - Number of records in Database: 10000

@@ -41,6 +41,5 @@ class CSVFileReaderTest {
         } catch (IOException e){
             System.err.println(e.getMessage());
         }
-
     }
 }

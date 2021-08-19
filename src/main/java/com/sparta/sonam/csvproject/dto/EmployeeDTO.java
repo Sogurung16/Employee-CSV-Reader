@@ -2,6 +2,7 @@ package com.sparta.sonam.csvproject.dto;
 
 import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class EmployeeDTO {
@@ -20,8 +21,9 @@ public class EmployeeDTO {
         this.gender = employeeString[5].charAt(0);
         this.email = employeeString[6];
         try {
-            this.dateOfBirth = DateFormat.getInstance().parse(employeeString[7]);
-            this.dateOfJoining = DateFormat.getInstance().parse(employeeString[8]);
+            DateFormat df = new SimpleDateFormat("M/d/yyyy");
+            this.dateOfBirth = df.parse(employeeString[7]);
+            this.dateOfJoining = df.parse(employeeString[8]);
         }catch (ParseException e){
             e.getMessage();
         }

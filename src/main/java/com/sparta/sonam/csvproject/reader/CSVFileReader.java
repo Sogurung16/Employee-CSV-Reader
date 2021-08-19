@@ -8,7 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class CSVFileReader {
+public class CSVFileReader implements Runnable{
     private static Logger logger = Logger.getLogger("FileIO");
 
     public static void readFromFile(String fileName) {
@@ -21,6 +21,8 @@ public class CSVFileReader {
 
             bufferedReader.readLine();
 
+            Thread thread = new Thread();
+
             while((line = bufferedReader.readLine())!=null){
                 EmployeeDTO employee = new EmployeeDTO(line.split(","));
                 employees.add(employee);
@@ -29,8 +31,6 @@ public class CSVFileReader {
             logger.info("Number of records in Database: " + employees.size());
             logger.info("First record in Database: " + employees.get(0).toString());
 
-            employees = DataProcessor.removeDuplicates(employees);
-
             logger.info("Number of records in Database: " + employees.size());
 
             fileReader.close();
@@ -38,6 +38,18 @@ public class CSVFileReader {
             System.err.println(e.getMessage());
         }
     }
+
+    @Override
+    public void run() {
+
+    }
 }
 
-//TODO: fix null return on date values
+//Read using multiple threads using a loop and group them together. kill the group after the process is complete.
+//Note: most JDBC drivers these days have a built in connection pool.
+//Connection pool: connections are reused rather than created each time a connection is requested
+
+//stream prallel method - concurrency
+//parallelstream
+
+//spliterator iterates concurrently
