@@ -17,21 +17,23 @@ public class CSVFileReader implements Runnable{
             var bufferedReader = new BufferedReader(fileReader);
 
             ArrayList<EmployeeDTO> employees = new ArrayList<>();
+            ArrayList<Integer> employeesID = new ArrayList<>();
             String line;
 
             bufferedReader.readLine();
 
-            Thread thread = new Thread();
-
             while((line = bufferedReader.readLine())!=null){
                 EmployeeDTO employee = new EmployeeDTO(line.split(","));
                 employees.add(employee);
+                employeesID.add(employee.getEmployeeID());
             }
 
             logger.info("Number of records in Database: " + employees.size());
             logger.info("First record in Database: " + employees.get(0).toString());
 
-            logger.info("Number of records in Database: " + employees.size());
+            DataProcessor.removeDuplicates(employeesID);
+
+            logger.info("Number of records in Database: " + employeesID.size());
 
             fileReader.close();
         } catch (IOException e){

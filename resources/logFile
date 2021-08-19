@@ -207,3 +207,16 @@ Date of Birth: Tue Sep 21 00:00:00 BST 1982
 Date of Joining: Fri Feb 01 00:00:00 GMT 2008
 Salary: 69294.0
 19-08-2021 14:22:22 INFO [main] CSVFileReader - Number of records in Database: 10000
+19-08-2021 14:29:10 INFO [main] CSVFileReader - Number of records in Database: 10000
+19-08-2021 14:29:10 INFO [main] CSVFileReader - First record in Database: 
+Employee ID: 198429
+Name Prefix: Mrs.
+First Name: Serafina
+Middle Initial: I
+Last Name: Bumgarner
+Gender: F
+Email: serafina.bumgarner@exxonmobil.com
+Date of Birth: Tue Sep 21 00:00:00 BST 1982
+Date of Joining: Fri Feb 01 00:00:00 GMT 2008
+Salary: 69294.0
+19-08-2021 14:29:10 INFO [main] CSVFileReader - Number of records in Database: 9943
