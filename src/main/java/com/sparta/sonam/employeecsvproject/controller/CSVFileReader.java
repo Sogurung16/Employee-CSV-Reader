@@ -1,6 +1,6 @@
-package com.sparta.sonam.csvproject.reader;
+package com.sparta.sonam.csvproject.controller.reader;
 
-import com.sparta.sonam.csvproject.dto.EmployeeDTO;
+import com.sparta.sonam.csvproject.model.dto.EmployeeDTO;
 import org.apache.log4j.Logger;
 import java.io.BufferedReader;
 import java.io.FileReader;

@@ -1,4 +1,4 @@
-package com.sparta.sonam.csvproject.dto;
+package com.sparta.sonam.employeecsvproject.model.dto;
 
 import java.text.DateFormat;
 import java.text.ParseException;

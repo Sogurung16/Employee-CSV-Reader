@@ -1,10 +1,9 @@
-package com.sparta.sonam.csvproject.reader;
+package com.sparta.sonam.csvproject.controller;
 
-import com.sparta.sonam.csvproject.dto.EmployeeDTO;
+import com.sparta.sonam.csvproject.model.dto.EmployeeDTO;
 import org.junit.jupiter.api.*;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
