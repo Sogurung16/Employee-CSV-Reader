@@ -9,7 +9,7 @@ import java.util.HashMap;
 
 public class Loader {
     private static HashMap<Integer, EmployeeDTO> employeeDTOHashMap;
-    private static Logger logger = Logger.getLogger("Loader");
+    private static Logger logger = Logger.getLogger("EmployeeCSVReader");
     public static void readFile(){
         long startTime = System.nanoTime();
 

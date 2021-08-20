@@ -3,7 +3,10 @@ package com.sparta.sonam.employeecsvproject.model;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.Formatter;
 
 public class EmployeeDTO {
     private int employeeID;
@@ -20,12 +23,12 @@ public class EmployeeDTO {
         this.lastName = employeeString[4];
         this.gender = employeeString[5].charAt(0);
         this.email = employeeString[6];
+        SimpleDateFormat df = new SimpleDateFormat("M/d/yyyy");
         try {
-            DateFormat df = new SimpleDateFormat("M/d/yyyy");
             this.dateOfBirth = df.parse(employeeString[7]);
             this.dateOfJoining = df.parse(employeeString[8]);
-        }catch (ParseException e){
-            e.getMessage();
+        } catch (ParseException exception) {
+            exception.printStackTrace();
         }
         this.salary = Float.parseFloat(employeeString[9]);
     }

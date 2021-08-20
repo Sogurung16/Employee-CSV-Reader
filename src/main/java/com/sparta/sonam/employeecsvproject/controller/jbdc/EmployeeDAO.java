@@ -3,6 +3,8 @@ package com.sparta.sonam.employeecsvproject.controller.jbdc;
 import com.sparta.sonam.employeecsvproject.model.EmployeeDTO;
 
 import java.sql.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 public class EmployeeDAO {
     /*Create, Read, Update, Delete*/
@@ -28,9 +30,10 @@ public class EmployeeDAO {
             preparedStatement.setString(5, employeeDTO.getLastName());
             preparedStatement.setString(6, String.valueOf(employeeDTO.getGender()));
             preparedStatement.setString(7, employeeDTO.getEmail());
-            preparedStatement.setDate(8, (Date) employeeDTO.getDateOfBirth());
-            preparedStatement.setDate(9, (Date) employeeDTO.getDateOfJoining());
+            preparedStatement.setDate(8, new java.sql.Date(employeeDTO.getDateOfBirth().getTime()));
+            preparedStatement.setDate(9, new java.sql.Date(employeeDTO.getDateOfJoining().getTime()));
             preparedStatement.setFloat(10, employeeDTO.getSalary());
+            preparedStatement.execute();
         } catch (SQLException e) {
             e.printStackTrace();
         }
