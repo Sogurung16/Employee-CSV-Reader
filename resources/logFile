@@ -3,7 +3,7 @@
 18-08-2021 15:44:11 INFO [main] CSVFileReader - Number of records in Database: 10000
 18-08-2021 15:44:11 INFO [main] CSVFileReader - EmployeeID: 198429
 18-08-2021 16:15:02 INFO [main] CSVFileReader - Number of records in Database: 10000
-18-08-2021 16:15:02 INFO [main] CSVFileReader - First record in Database: com.sparta.sonam.csvproject.dto.EmployeeDTO@2db7a79b
+18-08-2021 16:15:02 INFO [main] CSVFileReader - First record in Database: EmployeeDTO@2db7a79b
 18-08-2021 16:41:59 INFO [main] CSVFileReader - Number of records in Database: 10000
 18-08-2021 16:41:59 INFO [main] CSVFileReader - First record in Database: Employee ID: EmployeeDTO198429
 Name Prefix: EmployeeDTOMrs.
@@ -288,3 +288,16 @@ Salary: 69294.0
 19-08-2021 16:08:38 INFO [main] CSVFileReader - Number of clean records in Database: 9943
 19-08-2021 16:08:38 INFO [main] CSVFileReader - Number of duplicate records in Database: 57
 19-08-2021 16:08:38 INFO [main] App - Time taken to run programme: 0seconds
+19-08-2021 17:17:44 INFO [main] CSVFileReader - Number of clean records in Database: 9943
+19-08-2021 17:17:44 INFO [main] CSVFileReader - Number of duplicate records in Database: 57
+19-08-2021 17:17:44 INFO [main] App - D:\SpartaGlobal\Course\Week 5\FileIO\src\main\resources\EmployeeRecords.csv
+19-08-2021 17:17:44 INFO [main] App - Time taken to run programme: 0seconds
+20-08-2021 00:17:51 INFO [main] CSVFileReader - Number of clean records in Database: 9943
+20-08-2021 00:17:51 INFO [main] CSVFileReader - Number of duplicate records in Database: 57
+20-08-2021 00:17:51 INFO [main] Main - Time taken to run programme: 0seconds
+20-08-2021 01:17:58 INFO [main] CSVFileReader - Number of clean records in Database: 9943
+20-08-2021 01:17:58 INFO [main] CSVFileReader - Number of duplicate records in Database: 57
+20-08-2021 01:17:58 INFO [main] Loader - Time taken to run programme: 0seconds
+20-08-2021 01:20:49 INFO [main] CSVFileReader - Number of clean records in Database: 9943
+20-08-2021 01:20:49 INFO [main] CSVFileReader - Number of duplicate records in Database: 57
+20-08-2021 01:20:49 INFO [main] Loader - Time taken to run programme: 0seconds

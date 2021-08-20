@@ -1,6 +1,6 @@
-package com.sparta.sonam.csvproject.controller;
+package com.sparta.sonam.employeecsvproject.controller;
 
-import com.sparta.sonam.csvproject.model.dto.EmployeeDTO;
+import com.sparta.sonam.employeecsvproject.model.EmployeeDTO;
 import org.junit.jupiter.api.*;
 
 import java.io.BufferedReader;

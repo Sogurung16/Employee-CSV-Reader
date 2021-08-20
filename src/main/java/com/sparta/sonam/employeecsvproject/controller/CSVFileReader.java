@@ -1,6 +1,6 @@
-package com.sparta.sonam.csvproject.controller.reader;
+package com.sparta.sonam.employeecsvproject.controller;
 
-import com.sparta.sonam.csvproject.model.dto.EmployeeDTO;
+import com.sparta.sonam.employeecsvproject.model.EmployeeDTO;
 import org.apache.log4j.Logger;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -11,7 +11,7 @@ import java.util.HashMap;
 public class CSVFileReader{
     private static Logger logger = Logger.getLogger("CSVFileReader");
 
-    public static void readFromFile(String fileName) {
+    public static HashMap<Integer, EmployeeDTO> readFromFile(String fileName) {
         try {
             var fileReader = new FileReader(fileName);
             var bufferedReader = new BufferedReader(fileReader);
@@ -32,9 +32,11 @@ public class CSVFileReader{
             logger.info("Number of clean records in Database: " + employeeDTOHashMap.size());
             logger.info("Number of duplicate records in Database: " +
                     (employeeDTOArrayList.size() - employeeDTOHashMap.size()));
+            return employeeDTOHashMap;
         } catch (IOException e){
             System.err.println(e.getMessage());
         }
+        return null;
     }
 }
 
