@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 class CSVFileReaderTest {
     @Test
@@ -19,7 +20,7 @@ class CSVFileReaderTest {
     }
 
     @Test
-    @DisplayName("Number of records in Database should be 1000")
+    @DisplayName("Number of records in Database should be 10000")
     void numberOfRecordsInDatabase(){
         try {
             var fileReader = new FileReader("src/main/resources/EmployeeRecords.csv");
@@ -76,23 +77,36 @@ class CSVFileReaderTest {
             var fileReader = new FileReader("src/main/resources/EmployeeRecords.csv");
             var bufferedReader = new BufferedReader(fileReader);
 
-            HashMap<Integer, EmployeeDTO> employeeDTOHashMap = new HashMap<>();
+            Map<Integer, EmployeeDTO> employeeDTOMap = new HashMap<>();
             ArrayList<EmployeeDTO> employeeDTOArrayList = new ArrayList<>();
+
             String line;
 
             bufferedReader.readLine();
 
             while((line = bufferedReader.readLine())!=null){
                 EmployeeDTO employee = new EmployeeDTO(line.split(","));
-                employeeDTOHashMap.put(employee.getEmployeeID(), employee);
+                employeeDTOMap.put(employee.getEmployeeID(), employee);
                 employeeDTOArrayList.add(employee);
             }
+
             fileReader.close();
 
             Assertions.assertEquals(57,
-                    (employeeDTOArrayList.size() - employeeDTOHashMap.size()));
+                    (employeeDTOArrayList.size() - employeeDTOMap.size()));
         } catch (IOException e){
             System.err.println(e.getMessage());
         }
+    }
+
+    @Test
+    @DisplayName("The return value of the class should be of size 9943")
+    void arrayListReturnsCorrectValue(){
+        CSVFileReader csvFileReader = new CSVFileReader();
+
+        ArrayList<EmployeeDTO> employeeDTOArrayList = csvFileReader.readFromFile
+                ("D:/SpartaGlobal/Course/Week 5/FileIO/src/main/resources/EmployeeRecords.csv");
+
+        Assertions.assertEquals(9943, employeeDTOArrayList.size());
     }
 }
