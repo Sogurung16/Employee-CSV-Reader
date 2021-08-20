@@ -1,11 +1,14 @@
-package com.sparta.sonam.employeecsvproject.controller.jbdc;
+package com.sparta.sonam.employeecsvproject;
 
-import java.util.logging.Logger;
+import java.io.File;
 
 public class Main {
-    private static Logger logger = Logger.getLogger("Main");
+    private static final File employeeRecordsFile = new File("src/main/resources/EmployeeRecords.csv");
+    private static final File employeeRecordsLargeFile = new File("src/main/resources/EmployeeRecordsLarge.csv");
+
     public static void main( String[] args ) {
-        Loader.readFile();
-        Loader.writeFile();
+        Loader.writeToDB(employeeRecordsFile);
+
+        Loader.writeToDB(employeeRecordsLargeFile);
     }
 }

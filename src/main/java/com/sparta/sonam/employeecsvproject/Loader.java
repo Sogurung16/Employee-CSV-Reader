@@ -1,30 +1,25 @@
-package com.sparta.sonam.employeecsvproject.controller.jbdc;
+package com.sparta.sonam.employeecsvproject;
 
-import com.sparta.sonam.employeecsvproject.controller.CSVFileReader;
-import com.sparta.sonam.employeecsvproject.model.EmployeeDTO;
-import org.apache.log4j.Logger;
+import com.sparta.sonam.employeecsvproject.printer.Printer;
+import com.sparta.sonam.employeecsvproject.reader.CSVFileReader;
+import com.sparta.sonam.employeecsvproject.writer.DatabaseWriter;
 
 import java.io.File;
-import java.util.ArrayList;
 
 public class Loader{
-    private static ArrayList<EmployeeDTO> employeeDTOArrayList;
-    private static Logger logger = Logger.getLogger("EmployeeCSVReader");
-    public static void readFile(){
+    public static void readFile(File file){
+        CSVFileReader.readFromFile(file.getAbsolutePath());
+    }
+
+    public static void writeToDB(File file){
         long startTime = System.nanoTime();
 
-        File file = new File("src/main/resources/EmployeeRecords.csv");
-        String absolutePath = file.getAbsolutePath();
-        CSVFileReader csvFileReader = new CSVFileReader();
-        employeeDTOArrayList = csvFileReader.readFromFile(absolutePath);
+        Printer.printFileRead(file.getName());
+        DatabaseWriter.deleteAllFromDB();
+        DatabaseWriter.writeFileOntoDB(file);
 
         long endTime = System.nanoTime();
         long timeTaken = endTime - startTime;
-        logger.info("Time taken to read file: " + timeTaken/1_000_000_000 + "seconds");
-    }
-
-    public static void writeFile(){
-        DatabaseWriter databaseWriter = new DatabaseWriter();
-        databaseWriter.writeOntoDB(employeeDTOArrayList);
+        Printer.printTimeTakenToWriteToDB(timeTaken);
     }
 }
