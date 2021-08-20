@@ -6,6 +6,7 @@ public interface SQLQueries {
             "VALUES (?,?,?,?,?,?,?,?,?,?)";
     String SELECT_ALL = "SELECT * FROM `employee_csv_reader_db`.`employees`";
     String SELECT_RECORD = "SELECT * FROM `employee_csv_reader_db`.`employees` WHERE employee_id = ?";
+    String TRUNCATE_RECORDS = "TRUNCATE `employee_csv_reader_db`.`employees`";
     String DELETE_RECORD = "DELETE FROM `employee_csv_reader_db`.`employees` WHERE employee_id = ?";
     String UPDATE_RECORD_NAME_PREFIX = "UPDATE `employee_csv_reader_db`.`employees` SET `name_prefix` WHERE employee_id = ?";
     String UPDATE_RECORD_FIRST_NAME = "UPDATE `employee_csv_reader_db`.`employees` SET `first_name` WHERE employee_id = ?";

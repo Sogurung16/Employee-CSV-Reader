@@ -3,16 +3,17 @@ package com.sparta.sonam.employeecsvproject.controller.jbdc;
 import com.sparta.sonam.employeecsvproject.model.EmployeeDTO;
 
 import java.sql.*;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
-public class EmployeeDAO {
-    /*Create, Read, Update, Delete*/
+public class EmployeeDAO implements Runnable{
+    private ArrayList<EmployeeDTO> employeeDTOArrayList;
     private Connection connection;
     private Statement statement;
+    private PreparedStatement preparedStatement;
 
-    public EmployeeDAO(Connection connection){
+    public EmployeeDAO(Connection connection, ArrayList<EmployeeDTO> employeeDTOArrayList){
         this.connection = connection;
+        this.employeeDTOArrayList = employeeDTOArrayList;
         try {
             statement = connection.createStatement();
         } catch (SQLException e) {
@@ -22,7 +23,7 @@ public class EmployeeDAO {
 
     public void createRecord(EmployeeDTO employeeDTO){
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(SQLQueries.INSERT_INTO_EMPLOYEE_DB);
+            preparedStatement = connection.prepareStatement(SQLQueries.INSERT_INTO_EMPLOYEE_DB);
             preparedStatement.setInt(1, employeeDTO.getEmployeeID());
             preparedStatement.setString(2, employeeDTO.getNamePrefix());
             preparedStatement.setString(3, employeeDTO.getFirstName());
@@ -39,14 +40,31 @@ public class EmployeeDAO {
         }
     }
 
-    public void updateRecord(){
-
+    public void createMultipleRecords(ArrayList<EmployeeDTO> employeeDTOArrayList){
+        try {
+            preparedStatement = connection.prepareStatement(SQLQueries.INSERT_INTO_EMPLOYEE_DB);
+            for(EmployeeDTO employeeDTO: employeeDTOArrayList) {
+                preparedStatement.setInt(1, employeeDTO.getEmployeeID());
+                preparedStatement.setString(2, employeeDTO.getNamePrefix());
+                preparedStatement.setString(3, employeeDTO.getFirstName());
+                preparedStatement.setString(4, String.valueOf(employeeDTO.getMiddleInitial()));
+                preparedStatement.setString(5, employeeDTO.getLastName());
+                preparedStatement.setString(6, String.valueOf(employeeDTO.getGender()));
+                preparedStatement.setString(7, employeeDTO.getEmail());
+                preparedStatement.setDate(8, new java.sql.Date(employeeDTO.getDateOfBirth().getTime()));
+                preparedStatement.setDate(9, new java.sql.Date(employeeDTO.getDateOfJoining().getTime()));
+                preparedStatement.setFloat(10, employeeDTO.getSalary());
+                preparedStatement.addBatch();
+            }
+            preparedStatement.executeBatch();
+        } catch (SQLException e) {
+            e.getMessage();
+        }
     }
 
     public void printAllEmployees(){
         try {
-            ResultSet resultSet = statement.executeQuery("select * from employee_csv_reader_db.employees");
-
+            ResultSet resultSet = statement.executeQuery(SQLQueries.SELECT_ALL);
             while(resultSet.next()){
                 System.out.println(resultSet.getInt(1));
                 System.out.println(resultSet.getString(2));
@@ -64,7 +82,23 @@ public class EmployeeDAO {
         }
     }
 
-    public void deleteRecord(){
+    public void truncateRecords(){
+        try {
+            preparedStatement = connection.prepareStatement(SQLQueries.TRUNCATE_RECORDS);
+            preparedStatement.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
+    public void updateRecord(){
+
+    }
+
+    @Override
+    public void run() {
+        for(EmployeeDTO employeeDTO: this.employeeDTOArrayList){
+            createRecord(employeeDTO);
+        }
     }
 }

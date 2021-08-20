@@ -5,18 +5,18 @@ import org.apache.log4j.Logger;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class CSVFileReader{
-    private static Logger logger = Logger.getLogger("CSVFileReader");
+    private Logger logger = Logger.getLogger("CSVFileReader");
 
-    public static HashMap<Integer, EmployeeDTO> readFromFile(String fileName) {
+    public ArrayList<EmployeeDTO> readFromFile(String fileName) {
         try {
             var fileReader = new FileReader(fileName);
             var bufferedReader = new BufferedReader(fileReader);
 
-            HashMap<Integer, EmployeeDTO> employeeDTOHashMap = new HashMap<>();
+            Map<Integer, EmployeeDTO> employeeDTOMap = new HashMap<>();
             ArrayList<EmployeeDTO> employeeDTOArrayList = new ArrayList<>();
             String line;
 
@@ -24,15 +24,25 @@ public class CSVFileReader{
 
             while((line = bufferedReader.readLine())!=null){
                 EmployeeDTO employee = new EmployeeDTO(line.split(","));
-                employeeDTOHashMap.put(employee.getEmployeeID(), employee);
+                employeeDTOMap.put(employee.getEmployeeID(), employee);
                 employeeDTOArrayList.add(employee);
             }
             fileReader.close();
 
-            logger.info("Number of clean records in Database: " + employeeDTOHashMap.size());
+            logger.info("Number of clean records in Database: " + employeeDTOMap.size());
             logger.info("Number of duplicate records in Database: " +
-                    (employeeDTOArrayList.size() - employeeDTOHashMap.size()));
-            return employeeDTOHashMap;
+                    (employeeDTOArrayList.size() - employeeDTOMap.size()));
+
+            employeeDTOArrayList.clear();
+
+            Set<EmployeeDTO> employeeSet = new HashSet<>();
+            employeeDTOMap.entrySet()
+                    .stream().filter(entry -> employeeSet.add(entry.getValue()))
+                    .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+
+            employeeDTOArrayList.addAll(employeeSet);
+
+            return employeeDTOArrayList;
         } catch (IOException e){
             System.err.println(e.getMessage());
         }
