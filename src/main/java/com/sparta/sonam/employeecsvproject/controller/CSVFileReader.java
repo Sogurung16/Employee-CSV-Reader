@@ -16,30 +16,37 @@ public class CSVFileReader{
             var fileReader = new FileReader(fileName);
             var bufferedReader = new BufferedReader(fileReader);
 
+            //Map does not allow duplicate keys. Map is used to find distinct employee id (key)
+            //ArrayList does allow duplicates. Map and ArrayList is used calculate duplicate records.
             Map<Integer, EmployeeDTO> employeeDTOMap = new HashMap<>();
             ArrayList<EmployeeDTO> employeeDTOArrayList = new ArrayList<>();
+
             String line;
 
-            bufferedReader.readLine();
+            bufferedReader.readLine();//attributes row
 
             while((line = bufferedReader.readLine())!=null){
                 EmployeeDTO employee = new EmployeeDTO(line.split(","));
                 employeeDTOMap.put(employee.getEmployeeID(), employee);
                 employeeDTOArrayList.add(employee);
             }
+
             fileReader.close();
 
             logger.info("Number of clean records in Database: " + employeeDTOMap.size());
             logger.info("Number of duplicate records in Database: " +
                     (employeeDTOArrayList.size() - employeeDTOMap.size()));
 
-            employeeDTOArrayList.clear();
 
+            employeeDTOArrayList.clear(); //ArrayList is returned (less memory and faster)
+
+            //remove multiple values from Map
             Set<EmployeeDTO> employeeSet = new HashSet<>();
             employeeDTOMap.entrySet()
                     .stream().filter(entry -> employeeSet.add(entry.getValue()))
                     .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
 
+            //add the clean employees (no employee id)
             employeeDTOArrayList.addAll(employeeSet);
 
             return employeeDTOArrayList;

@@ -24,13 +24,7 @@ public class Loader{
     }
 
     public static void writeFile(){
-        long startTime = System.nanoTime();
-
         DatabaseWriter databaseWriter = new DatabaseWriter();
         databaseWriter.writeOntoDB(employeeDTOArrayList);
-
-        long endTime = System.nanoTime();
-        long timeTaken = endTime - startTime;
-        logger.info("Time taken to write to database: " + timeTaken/1_000_000_000 + "seconds");
     }
 }

@@ -4,16 +4,18 @@ import com.sparta.sonam.employeecsvproject.model.EmployeeDTO;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
+
 
 public class EmployeeDAO implements Runnable{
-    private ArrayList<EmployeeDTO> employeeDTOArrayList;
+    private List<EmployeeDTO> employeeDTOList;
     private Connection connection;
     private Statement statement;
     private PreparedStatement preparedStatement;
 
-    public EmployeeDAO(Connection connection, ArrayList<EmployeeDTO> employeeDTOArrayList){
+    public EmployeeDAO(Connection connection, List<EmployeeDTO> employeeDTOList){
         this.connection = connection;
-        this.employeeDTOArrayList = employeeDTOArrayList;
+        this.employeeDTOList = employeeDTOList;
         try {
             statement = connection.createStatement();
         } catch (SQLException e) {
@@ -97,8 +99,9 @@ public class EmployeeDAO implements Runnable{
 
     @Override
     public void run() {
-        for(EmployeeDTO employeeDTO: this.employeeDTOArrayList){
-            createRecord(employeeDTO);
-        }
+        this.employeeDTOList.stream()
+                .parallel()
+                .spliterator().trySplit()
+                .forEachRemaining((EmployeeDTO e) -> createRecord(e));
     }
 }
